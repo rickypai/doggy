@@ -16,7 +16,7 @@ module Doggy
           Doggy.ui.say "Response: #{resp.inspect}"
         else
           Doggy.ui.say "Saving #{resource.path}, with id = #{resource.id}"
-          resource.ensure_read_only!
+          # resource.ensure_read_only!
           resource.save
         end
       end
@@ -31,7 +31,7 @@ module Doggy
       Doggy::Model.all_local_resources.each do |resource|
         next if ids.any? && !ids.include?(resource.id.to_s)
         Doggy.ui.say "Pushing #{resource.path}, with id #{resource.id}"
-        resource.ensure_read_only!
+        # resource.ensure_read_only!
         resource.save
       end
     end

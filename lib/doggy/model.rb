@@ -182,7 +182,7 @@ module Doggy
     end
 
     def save_local
-      ensure_read_only!
+      # ensure_read_only!
       self.path ||= Doggy.object_root.join("#{prefix}-#{id}.json")
       File.open(@path, 'w') { |f| f.write(JSON.pretty_generate(to_h)) }
     end
