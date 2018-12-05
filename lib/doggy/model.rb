@@ -196,7 +196,7 @@ module Doggy
     end
 
     def save
-      ensure_managed_emoji!
+      # ensure_managed_emoji!
       validate
 
       body = JSON.dump(to_h)
